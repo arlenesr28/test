@@ -7,6 +7,7 @@ Background:
     
     When I login with <username> and <password>
     Then I should be able to login successfully with <username>
+    Then I should logged out
     
     Examples:
       |username |password|message|

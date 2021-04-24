@@ -19,8 +19,12 @@ When(/^I login with (\w+) and (.+)$/, async function (username, password) {
 });
 
 Then(/^I should be able to login successfully with (.*)$/, async function (username) {
-    // await expect(SecurePage.headerUsername).toBeExisting();
-    // await expect(SecurePage.headerUsername).toHaveTextContaining(username);
+    await expect(SecurePage.headerUsername).toBeExisting();
+    await expect(SecurePage.headerUsername).toHaveTextContaining(username);
+});
+
+Then(/^I should logged out$/, async function () {
+    await LoginPage.logout();
 });
 
 Then(/^I should see an error like this (.*)$/, async function (message) {
