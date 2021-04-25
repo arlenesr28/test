@@ -1,3 +1,4 @@
+@login
 Feature: Login for Book Store Application
 
 Background:
@@ -13,7 +14,7 @@ Background:
       |username |password|message|
       |asalgado |Test123!|       |
 
-  Scenario Outline: I Log in with Invalid credentials
+  Scenario: I Log in with Invalid credentials
     
     When I login with <username> and <password>
     Then I should see an error like this <message>
