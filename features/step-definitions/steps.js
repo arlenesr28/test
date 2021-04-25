@@ -4,6 +4,8 @@ const assert = require('assert');
 
 const LoginPage = require('../pageobjects/login.page');
 const SecurePage = require('../pageobjects/secure.page');
+const { createSecureServer } = require('http2');
+const securePage = require('../pageobjects/secure.page');
 
 const pages = {
     login: LoginPage
@@ -31,3 +33,17 @@ Then(/^I should see an error like this (.*)$/, async function (message) {
     await expect(SecurePage.invalidUser).toBeExisting();
     await expect(SecurePage.invalidUser).toHaveTextContaining(message);
 });
+
+When(/^I click on the New User button$/, async function () {
+    await expect(LoginPage.btnNewUser).toBeExisting();
+    await LoginPage.newuserbtn();
+});
+
+Then(/^I enter (\w+) and (.+) and (.*) and (.*)$/, async function (firstName, lastName, username, password) {
+    await LoginPage.createNewUser(firstName, lastName, username, password)
+});
+
+// When(/^I enter the valid data to create a new user$/, async function (table) {
+//     const data = table.rowsHash();
+//     LoginPage.createNewUser(data);
+// });

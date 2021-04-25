@@ -21,3 +21,12 @@ Background:
     Examples:
       | username  | password      | message                       |
       | asalgado2 | Test123       | Invalid username or password! |
+  
+  Scenario: I can create a new user 
+
+    When I click on the New User button
+    Then I enter <FirstName> and <LastName> and <username> and <password>
+
+    Examples:
+      | FirstName             | LastName         | username           | password  |
+      | Michael               | Scott            | mscott             | Test123!  |
