@@ -35,11 +35,21 @@ Then(/^I search for (.*)$/, async function (publisher) {
 });
 
 When(/^I am on the Book Store Page and click on a book$/, async function () {
-    //await expect(BookStorePage.linkBookTitle).toBeExisting();
     await BookStorePage.clickBook()
 });
 
 Then(/^I see all the Information and Add the book to my collection$/, async function () {
-    await BookStorePage.addToMyCollection();
-    //await expect(BookStorePage.btnAddCollection).toBeExisting();
+    //await BookStorePage.addToMyCollection();
+});
+
+Then(/^I click back to the Book Store$/, async function () {
+    await BookStorePage.backBOokStore();
+});
+
+Then(/^I am on the BookStore Page and scrolldown until the numeber of rows and I change the row number$/, async function () {
+    await BookStorePage.changeRowNumber();
+});
+
+Then(/^I can see the Next Button$/, async function () {
+    await BookStorePage.nextPage();
 });

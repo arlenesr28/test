@@ -4,8 +4,6 @@ const assert = require('assert');
 
 const LoginPage = require('../pageobjects/login.page');
 const SecurePage = require('../pageobjects/secure.page');
-const { createSecureServer } = require('http2');
-const securePage = require('../pageobjects/secure.page');
 
 const pages = {
     login: LoginPage
