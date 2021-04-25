@@ -19,7 +19,12 @@ When(/^I login with (\w+) and (.+)$/, async function (username, password) {
     await LoginPage.login(username, password)
 });
 
-Then(/^I search for (.*)$/, async function (author) {
+Then(/^I search for (.*)$/, async function (publisher) {
     await expect(ProfilePage.txtboxSearch).toBeExisting();
-    await ProfilePage.search(author);
+    await ProfilePage.search(publisher);
+});
+
+Then(/^I delete the first book$/, async function () {
+    await expect(ProfilePage.btnDelete).toBeExisting();
+    await ProfilePage.deleteBook();
 });
