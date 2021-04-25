@@ -20,3 +20,7 @@ Feature: Profile Book Store Application
     Examples:
       | author                 |publisher          |
       | Addy Osmani            |O'Reilly Media     |
+
+  Scenario: Delete all the Books 
+    
+    Then I delete all the Books

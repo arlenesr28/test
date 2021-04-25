@@ -23,7 +23,7 @@ Then(/^I should be logged in$/, async function () {
 });
 
 When(/^I scrolldown to BookStore and click$/, async function () {
-    browser.fullscreenWindow()
+    //browser.fullscreenWindow()
     await BookStorePage.bookstore()
     await expect(BookStorePage.btnBookStore).toBeExisting();
     await BookStorePage.bookstoreClick()

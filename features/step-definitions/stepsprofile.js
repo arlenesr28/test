@@ -28,3 +28,8 @@ Then(/^I delete the first book$/, async function () {
     await expect(ProfilePage.btnDelete).toBeExisting();
     await ProfilePage.deleteBook();
 });
+
+Then(/^I delete all the Books$/, async function () {
+    await expect(ProfilePage.btnDeleteAllBooks).toBeExisting();
+    await ProfilePage.deleteAllBooks();
+});
